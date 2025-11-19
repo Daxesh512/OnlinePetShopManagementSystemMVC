@@ -1,0 +1,84 @@
+﻿@model  OnlinePetShopManagementSystemMVC.Models.BookingTbl
+@{
+    ViewBag.Title = "Booking";
+    Layout = "~/Views/Shared/_LayoutMasterPage.cshtml";
+}
+
+<center>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    @using (Html.BeginForm("Booking", "Home", FormMethod.Post))
+    {
+        <table style="width: 448px; height: 440px; background-color: #FF9933; font-size: large; font-weight: bold;">
+            <th colspan="2" align="center"><h1>Order Now</h1></th>
+
+
+            <tr>
+                <td align="center">First Name</td>
+                <td align="center">
+                    <a>@Html.TextBoxFor(m => m.firstName)</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">Last Name</td>
+                <td align="center">
+                    <a>@Html.TextBoxFor(m => m.lastName)</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">Email Id</td>
+                <td align="center">
+                    @Html.TextBoxFor(m => m.mailId)
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">Phone</td>
+                <td align="center">
+                    @Html.TextBoxFor(m => m.phone)
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">Animal Name</td>
+                <td align="center">
+                    @Html.TextBoxFor(m => m.AnimalName)
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">Service Description</td>
+                <td align="center">
+                    @Html.TextAreaFor(m => m.serviceDesription)
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center">Address</td>
+                <td align="center">
+                    @Html.TextAreaFor(m => m.address)
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="Confirm" name="Confirm" class="btn btnOrder" />
+                </td>
+            </tr>
+        </table>
+    }
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+</center>
+

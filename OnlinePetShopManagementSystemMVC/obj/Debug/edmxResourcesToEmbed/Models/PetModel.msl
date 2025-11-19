@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PetShopDataModelStoreContainer" CdmEntityContainer="PetShopDataEntities">
+    <EntitySetMapping Name="AdminTbls">
+      <EntityTypeMapping TypeName="PetShopDataModel.AdminTbl">
+        <MappingFragment StoreEntitySet="AdminTbl">
+          <ScalarProperty Name="adminName" ColumnName="adminName" />
+          <ScalarProperty Name="mailId" ColumnName="mailId" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookingTbls">
+      <EntityTypeMapping TypeName="PetShopDataModel.BookingTbl">
+        <MappingFragment StoreEntitySet="BookingTbl">
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="mailId" ColumnName="mailId" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="AnimalName" ColumnName="AnimalName" />
+          <ScalarProperty Name="serviceDesription" ColumnName="serviceDesription" />
+          <ScalarProperty Name="address" ColumnName="address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblRegisters">
+      <EntityTypeMapping TypeName="PetShopDataModel.TblRegister">
+        <MappingFragment StoreEntitySet="TblRegister">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="mailId" ColumnName="mailId" />
+          <ScalarProperty Name="phoneno" ColumnName="phoneno" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

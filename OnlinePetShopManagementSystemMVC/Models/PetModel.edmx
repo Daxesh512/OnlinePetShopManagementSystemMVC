@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PetShopDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'F:\ASP.NET\ONLINEPETSHOPMANAGEMENTSYSTEMMVC\ONLINEPETSHOPMANAGEMENTSYSTEMMVC\APP_DATA\PETSHOPDATA.MDF.dbo.AdminTbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="AdminTbl">
+          <Key>
+            <PropertyRef Name="adminName" />
+            <PropertyRef Name="mailId" />
+            <PropertyRef Name="password" />
+          </Key>
+          <Property Name="adminName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="mailId" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'F:\ASP.NET\ONLINEPETSHOPMANAGEMENTSYSTEMMVC\ONLINEPETSHOPMANAGEMENTSYSTEMMVC\APP_DATA\PETSHOPDATA.MDF.dbo.BookingTbl' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BookingTbl">
+          <Key>
+            <PropertyRef Name="firstName" />
+            <PropertyRef Name="lastName" />
+            <PropertyRef Name="mailId" />
+            <PropertyRef Name="phone" />
+            <PropertyRef Name="AnimalName" />
+            <PropertyRef Name="serviceDesription" />
+            <PropertyRef Name="address" />
+          </Key>
+          <Property Name="firstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="lastName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="mailId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="AnimalName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="serviceDesription" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'F:\ASP.NET\ONLINEPETSHOPMANAGEMENTSYSTEMMVC\ONLINEPETSHOPMANAGEMENTSYSTEMMVC\APP_DATA\PETSHOPDATA.MDF.dbo.TblRegister' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TblRegister">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="userName" />
+            <PropertyRef Name="mailId" />
+            <PropertyRef Name="phoneno" />
+            <PropertyRef Name="pass" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="mailId" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="phoneno" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="pass" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PetShopDataModelStoreContainer">
+          <EntitySet Name="AdminTbl" EntityType="Self.AdminTbl" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[AdminTbl].[adminName] AS [adminName], 
+[AdminTbl].[mailId] AS [mailId], 
+[AdminTbl].[password] AS [password]
+FROM [dbo].[AdminTbl] AS [AdminTbl]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BookingTbl" EntityType="Self.BookingTbl" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[BookingTbl].[firstName] AS [firstName], 
+[BookingTbl].[lastName] AS [lastName], 
+[BookingTbl].[mailId] AS [mailId], 
+[BookingTbl].[phone] AS [phone], 
+[BookingTbl].[AnimalName] AS [AnimalName], 
+[BookingTbl].[serviceDesription] AS [serviceDesription], 
+[BookingTbl].[address] AS [address]
+FROM [dbo].[BookingTbl] AS [BookingTbl]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="TblRegister" EntityType="Self.TblRegister" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[TblRegister].[name] AS [name], 
+[TblRegister].[userName] AS [userName], 
+[TblRegister].[mailId] AS [mailId], 
+[TblRegister].[phoneno] AS [phoneno], 
+[TblRegister].[pass] AS [pass]
+FROM [dbo].[TblRegister] AS [TblRegister]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PetShopDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminTbl">
+          <Key>
+            <PropertyRef Name="adminName" />
+            <PropertyRef Name="mailId" />
+            <PropertyRef Name="password" />
+          </Key>
+          <Property Name="adminName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mailId" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BookingTbl">
+          <Key>
+            <PropertyRef Name="firstName" />
+            <PropertyRef Name="lastName" />
+            <PropertyRef Name="mailId" />
+            <PropertyRef Name="phone" />
+            <PropertyRef Name="AnimalName" />
+            <PropertyRef Name="serviceDesription" />
+            <PropertyRef Name="address" />
+          </Key>
+          <Property Name="firstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="phone" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="AnimalName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="serviceDesription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblRegister">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="userName" />
+            <PropertyRef Name="mailId" />
+            <PropertyRef Name="phoneno" />
+            <PropertyRef Name="pass" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="userName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mailId" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="phoneno" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PetShopDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminTbls" EntityType="Self.AdminTbl" />
+          <EntitySet Name="BookingTbls" EntityType="Self.BookingTbl" />
+          <EntitySet Name="TblRegisters" EntityType="Self.TblRegister" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PetShopDataModelStoreContainer" CdmEntityContainer="PetShopDataEntities">
+          <EntitySetMapping Name="AdminTbls">
+            <EntityTypeMapping TypeName="PetShopDataModel.AdminTbl">
+              <MappingFragment StoreEntitySet="AdminTbl">
+                <ScalarProperty Name="adminName" ColumnName="adminName" />
+                <ScalarProperty Name="mailId" ColumnName="mailId" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookingTbls">
+            <EntityTypeMapping TypeName="PetShopDataModel.BookingTbl">
+              <MappingFragment StoreEntitySet="BookingTbl">
+                <ScalarProperty Name="firstName" ColumnName="firstName" />
+                <ScalarProperty Name="lastName" ColumnName="lastName" />
+                <ScalarProperty Name="mailId" ColumnName="mailId" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="AnimalName" ColumnName="AnimalName" />
+                <ScalarProperty Name="serviceDesription" ColumnName="serviceDesription" />
+                <ScalarProperty Name="address" ColumnName="address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblRegisters">
+            <EntityTypeMapping TypeName="PetShopDataModel.TblRegister">
+              <MappingFragment StoreEntitySet="TblRegister">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="mailId" ColumnName="mailId" />
+                <ScalarProperty Name="phoneno" ColumnName="phoneno" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
